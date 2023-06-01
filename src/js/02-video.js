@@ -13,4 +13,6 @@ function onPlay() {
 
 player.on('timeupdate', throttle(onPlay, 1000));
 
-player.setCurrentTime(localStorage.getItem(CURRENT_TIME_KEY));
+if (localStorage.getItem(CURRENT_TIME_KEY) !== null) {
+  player.setCurrentTime(localStorage.getItem(CURRENT_TIME_KEY));
+}

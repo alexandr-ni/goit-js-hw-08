@@ -21,19 +21,7 @@ function createGalleryItem(pictures) {
 
 galleryContainerEl.insertAdjacentHTML('beforeend', galleryItemEl);
 
-galleryContainerEl.addEventListener('click', onItemClick);
-
-function onItemClick(event) {
-  event.preventDefault();
-
-  if (event.target.classList.value !== 'gallery__image') {
-    return;
-  }
-
-  const lightbox = new SimpleLightbox('.gallery__link', {
-    captionsData: 'alt',
-    captionDelay: '250',
-  });
-
-  galleryContainerEl.removeEventListener('click', onItemClick);
-}
+const lightbox = new SimpleLightbox('.gallery__link', {
+  captionsData: 'alt',
+  captionDelay: '250',
+});
